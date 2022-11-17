@@ -15,11 +15,14 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     Animator animator;
     SpriteRenderer SpriteRenderer;
+    int health = 100;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Log("Player health: " + health);
     }
 
     // Update is called once per frame
@@ -77,6 +80,15 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         animator.SetTrigger("SwingSword");
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("TESTING");
+        }
     }
 
 }
