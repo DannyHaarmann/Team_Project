@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     Animator animator;
     SpriteRenderer SpriteRenderer;
+
+    public MeleeScript bodyAttack;
+
     int health = 100;
     
     void Start()
@@ -55,9 +58,9 @@ public class PlayerController : MonoBehaviour
             SpriteRenderer.flipX = false;
         }
 
-
-
+    
     }
+    
     private bool TryMove(Vector2 direction)
     {
         int count = rb.Cast(movementInput, movementfilter, castCollisions, MoveSpeed * Time.fixedDeltaTime + collisionOffset);
@@ -82,13 +85,6 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("SwingSword");
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Enemy"))
-        {
-            Destroy(collision.gameObject);
-            Debug.Log("TESTING");
-        }
-    }
+    
 
 }

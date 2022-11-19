@@ -4,38 +4,26 @@ using UnityEngine;
 
 public class enemyScript1 : MonoBehaviour
 {
-    Rigidbody2D rb;
-    Effector2D eff;
-
-    int health;
-
-    void Awake()
+   public int Health
     {
-        this.health = 100;
-        rb = this.gameObject.GetComponent<Rigidbody2D>();
-        eff = this.gameObject.GetComponent<Effector2D>();
-        
-    }
-
-    void Start()
-    {
-        Debug.Log("Enemy health: " + this.health);
-    }
-
-    int getHealth()
-    {
-        return this.health;
-    }
-
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
+        set
         {
-            this.health = health - 10;
-            Debug.Log(this.health);
+            print(value);
+            health = value;
+            if(health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        get
+        {
+            return health;
         }
     }
+
+    public int health = 100;
+
+   
 
     
 }
