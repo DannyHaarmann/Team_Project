@@ -15,9 +15,10 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     Animator animator;
     SpriteRenderer SpriteRenderer;
+    public SwordAttack SwordAttack;
 
     public MeleeScript bodyAttack;
-
+    public bool canMove = true;
     int health = 100;
     
     void Start()
@@ -31,33 +32,37 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-
-        if (movementInput != Vector2.zero)
-        {
-            bool success = TryMove(movementInput);
-            if (!success)
+      
+            if (movementInput != Vector2.zero)
             {
-                success = TryMove(new Vector2(movementInput.x, 0));
+                bool success = TryMove(movementInput);
                 if (!success)
                 {
-                    success = TryMove(new Vector2(0, movementInput.y));
+                    success = TryMove(new Vector2(movementInput.x, 0));
+                    if (!success)
+                    {
+                        success = TryMove(new Vector2(0, movementInput.y));
+                    }
                 }
+                animator.SetBool("IsMoving", success);
             }
-            animator.SetBool("IsMoving", success);
+            else
+            {
+                animator.SetBool("IsMoving", false);
+            }
+            if (movementInput.x < 0)
+            {
+                SpriteRenderer.flipX = true;
+            SwordAttack.MainattackDirection = SwordAttack.attackDirection.right;
+            
+            }
+            else if (movementInput.x > 0)
+            {
+                SpriteRenderer.flipX = false;
+            SwordAttack.MainattackDirection = SwordAttack.attackDirection.left;
         }
-        else
-        {
-            animator.SetBool("IsMoving", false);
-        }
-        if (movementInput.x < 0)
-        {
-            SpriteRenderer.flipX = true;
-        }
-        else if (movementInput.x > 0)
-        {
-            SpriteRenderer.flipX = false;
-        }
-
+       
+      
     
     }
     
@@ -85,6 +90,21 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("SwingSword");
     }
 
+    public void SwordAttack()
+    {
+        if(spriteRenderer.flipx == true)
+        {
+            SwordAttack.att
+        }
+    }
+    public void lockMovment()
+    {
+        canMove = true;
+    }
+    public void unlockMovement()
+    {
+        canMove = true;
+    }
     
 
 }
