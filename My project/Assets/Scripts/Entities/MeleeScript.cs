@@ -25,12 +25,12 @@ public class MeleeScript : MonoBehaviour
         transform.position = new Vector2(attackOffset.x*-1, attackOffset.y);
 
     }
-
+/*
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")
         {
-            enemyScript1 enemy = other.GetComponent<enemyScript1>();
+            Enemy.GetComponent<enemyScript1>();
 
             if(enemy != null)
             {
@@ -38,5 +38,6 @@ public class MeleeScript : MonoBehaviour
             }
         }
     }
+*/
 }
 

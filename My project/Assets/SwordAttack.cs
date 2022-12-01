@@ -7,12 +7,13 @@ public class SwordAttack : MonoBehaviour
 
   
     Vector2 attackOffset;
-    Collider2D swordCollider;
+    public Collider2D swordCollider;
     int health;
+    public int damage = 3;
     // Start is called before the first frame update
     void Start()
     {
-        swordCollider = GetComponent<Collider2D>();
+         
         attackOffset = transform.position;
     }
 
@@ -22,20 +23,21 @@ public class SwordAttack : MonoBehaviour
         
     }
 
+
     public void attackLeft()
     {
         print("attack left");
         swordCollider.enabled = true;
-        transform.position = new Vector3(attackOffset.x * -1, attackOffset.y);
-        health = health - 10;
+        transform.localPosition = new Vector3(attackOffset.x * -1, attackOffset.y);
+        
 
     }
     public void attackRight()
     {
         print("attack rigth");
         swordCollider.enabled = true;
-        transform.position = attackOffset;
-        health = health - 10;
+        transform.localPosition = attackOffset;
+        
     }
     public void stopAttack()
     {
@@ -46,6 +48,12 @@ public class SwordAttack : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             print("Hit");
+            Enemy enemy = collision.GetComponent<Enemy>();
+            if(enemy != null)
+            {
+                enemy.Health -= damage;
+            }
+
         }
     }
 

@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyScript1 : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
    public int Health
     {
         set
         {
-            print(value);
+            
             health = value;
             if(health <= 0)
             {
-                Destroy(gameObject);
+                defeated();
             }
         }
         get
@@ -21,9 +21,14 @@ public class enemyScript1 : MonoBehaviour
         }
     }
 
-    public int health = 100;
+    public int health = 1;
 
+ 
    
-
+    public void defeated()
+    {
+        Destroy(gameObject);
+        print("Killed");
+    }
     
 }

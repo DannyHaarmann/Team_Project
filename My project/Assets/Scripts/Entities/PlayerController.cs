@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void SwordAttack()
     {
+        lockMovment();
         
         if (SpriteRenderer.flipX == true)
         {
@@ -103,8 +104,15 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-    
+    public void endAttack()
+    {
+        unlockMovement();
+
+        swordAttack.stopAttack();
+
+    }
     public void lockMovment()
+
     {
         canMove = true;
     }
