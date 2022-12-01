@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2bba0451647f654d9b7dcae3746dc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
 --- !u!70 &151671606
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -100360,71 +100360,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e39d42371e72fc44b7060accc773e3d, type: 3}
---- !u!1001 &4211562793933053046
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1967505223437973364, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: health
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.111564964
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -162.30896
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6181600107084306312, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9100372967124661223, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_Name
-      value: SLime2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9100372967124661223, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9a5a44c8adddfba49822590ea3351877, type: 3}
 --- !u!1001 &4745984075203561049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100484,6 +100419,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7743824262249582930, guid: 11b78343ab7068b439c645eb7c11f04a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 01ced9c33acf5bd47b4649f73bed4863, type: 2}
     m_RemovedComponents:
     - {fileID: 4745984075353888111, guid: 11b78343ab7068b439c645eb7c11f04a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 11b78343ab7068b439c645eb7c11f04a, type: 3}

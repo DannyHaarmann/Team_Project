@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void SwordAttack()
     {
+        print("Start swing");
         lockMovment();
         
         if (SpriteRenderer.flipX == true)
@@ -107,6 +108,7 @@ public class PlayerController : MonoBehaviour
     public void endAttack()
     {
         unlockMovement();
+        print("End Swing");
 
         swordAttack.stopAttack();
 
