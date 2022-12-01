@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     Animator animator;
     SpriteRenderer SpriteRenderer;
-    public SwordAttack SwordAttack;
+    public SwordAttack swordAttack;
 
     public MeleeScript bodyAttack;
     public bool canMove = true;
@@ -53,13 +53,13 @@ public class PlayerController : MonoBehaviour
             if (movementInput.x < 0)
             {
                 SpriteRenderer.flipX = true;
-            SwordAttack.MainattackDirection = SwordAttack.attackDirection.right;
+            
             
             }
             else if (movementInput.x > 0)
             {
                 SpriteRenderer.flipX = false;
-            SwordAttack.MainattackDirection = SwordAttack.attackDirection.left;
+            
         }
        
       
@@ -92,11 +92,18 @@ public class PlayerController : MonoBehaviour
 
     public void SwordAttack()
     {
-        if(spriteRenderer.flipx == true)
+        
+        if (SpriteRenderer.flipX == true)
         {
-            SwordAttack.att
+            swordAttack.attackLeft();
         }
+        else
+        {
+            swordAttack.attackRight();
+        }
+        
     }
+    
     public void lockMovment()
     {
         canMove = true;
