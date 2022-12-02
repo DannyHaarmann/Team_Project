@@ -17,9 +17,10 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer SpriteRenderer;
     public SwordAttack swordAttack;
 
-    public MeleeScript bodyAttack;
     public bool canMove = true;
-    int health = 100;
+    public int health = 100;
+
+
     
     void Start()
     {
@@ -60,7 +61,9 @@ public class PlayerController : MonoBehaviour
             {
                 SpriteRenderer.flipX = false;
             
-        }
+            }
+
+
        
       
     
@@ -92,7 +95,6 @@ public class PlayerController : MonoBehaviour
 
     public void SwordAttack()
     {
-        print("Start swing");
         lockMovment();
         
         if (SpriteRenderer.flipX == true)
@@ -121,6 +123,11 @@ public class PlayerController : MonoBehaviour
     public void unlockMovement()
     {
         canMove = true;
+    }
+
+    public int getHealth()
+    {
+        return health;
     }
     
 
