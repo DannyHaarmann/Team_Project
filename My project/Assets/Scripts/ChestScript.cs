@@ -12,17 +12,7 @@ public class ChestScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("p"))
-        {
-            if (ChestIsOpen)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        } 
+
     }
 
     public void Resume()

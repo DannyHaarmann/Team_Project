@@ -59,6 +59,7 @@ public class InteractScript : MonoBehaviour
         HealthUI.SetActive(true);
         Time.timeScale = 1f;
         ChestIsOpen = false;
+        transform.localPosition = new Vector3();
     }
 
     public void Pause()
@@ -67,5 +68,6 @@ public class InteractScript : MonoBehaviour
         HealthUI.SetActive(false);
         Time.timeScale = 0f;
         ChestIsOpen = true;
+        transform.localPosition = new Vector3();
     }
 }
