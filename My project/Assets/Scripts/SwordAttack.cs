@@ -6,7 +6,7 @@ public class SwordAttack : MonoBehaviour
 {
 
   
-    Vector2 attackOffset;
+    Vector3 RightattackOffset;
     public Collider2D swordCollider;
     int health;
     public int damage = 3;
@@ -14,13 +14,13 @@ public class SwordAttack : MonoBehaviour
     void Start()
     {
          
-        attackOffset = transform.position;
+        RightattackOffset = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+           
     }
 
 
@@ -28,7 +28,8 @@ public class SwordAttack : MonoBehaviour
     {
         print("attack left");
         swordCollider.enabled = true;
-        transform.localPosition = new Vector3(attackOffset.x * -1, attackOffset.y);
+        transform.localPosition = new Vector3(RightattackOffset.x * -1, RightattackOffset.y);
+        
         
 
     }
@@ -36,7 +37,7 @@ public class SwordAttack : MonoBehaviour
     {
             print("attack right");
             swordCollider.enabled = true;
-            transform.localPosition = attackOffset;
+            transform.localPosition = RightattackOffset;
 
     }
     public void stopAttack()

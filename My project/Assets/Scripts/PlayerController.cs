@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-      
+        if (canMove)
+        {
             if (movementInput != Vector2.zero)
             {
                 bool success = TryMove(movementInput);
@@ -56,16 +57,17 @@ public class PlayerController : MonoBehaviour
             }
             if (movementInput.x < 0)
             {
+
                 SpriteRenderer.flipX = true;
-            
-            
+
+
             }
             else if (movementInput.x > 0)
             {
                 SpriteRenderer.flipX = false;
-            
-            }
 
+            }
+        }
             
        
       
@@ -123,7 +125,7 @@ public class PlayerController : MonoBehaviour
     public void lockMovment()
 
     {
-        canMove = true;
+        canMove = false;
     }
     public void unlockMovement()
     {
