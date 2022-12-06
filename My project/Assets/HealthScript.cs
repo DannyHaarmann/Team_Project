@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class HealthScript : MonoBehaviour
+{
+    public GameObject Player;
+    public Text healthText;
+    int health;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        health = Player.GetComponent<PlayerController>().getHealth();
+        Text text = GetComponent<Text>();
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        health = Player.GetComponent<PlayerController>().getHealth();
+        healthText.text = ("Health: " + health);
+        if(health <= 0)
+        {
+            Destroy(Player);
+        }
+    }
+}
+
+
+ 

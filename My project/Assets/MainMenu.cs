@@ -15,4 +15,15 @@ public class MainMenu : MonoBehaviour
         Debug.Log("The game has been quit.");
         Application.Quit();
     }
+
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
+    }
+
+    public void BackFromCredits()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    }
 }
