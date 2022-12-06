@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.05F;
     public ContactFilter2D movementfilter;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    //public static List<Item> Inventory = new List<Item>();
+    //public static List<Item> Inventory = new List<Item>();
     Animator animator;
     SpriteRenderer SpriteRenderer;
     public SwordAttack swordAttack;
@@ -142,5 +144,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /* public static void addToInventory(Item item)
+    {
+        Inventory.Add(item);
+    } */
 
 }
