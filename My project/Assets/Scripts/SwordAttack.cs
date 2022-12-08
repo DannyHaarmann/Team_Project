@@ -10,11 +10,13 @@ public class SwordAttack : MonoBehaviour
     public Collider2D swordCollider;
     int health;
     public int damage = 3;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
          
         RightattackOffset = transform.position;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class SwordAttack : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             print("Hit");
+            animator.SetTrigger("Hit");
             Enemy enemy = collision.GetComponent<Enemy>();
             if(enemy != null)
             {
