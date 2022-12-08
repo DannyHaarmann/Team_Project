@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Chest
   - Interaction
+  - Sword
   layers:
   - Default
   - TransparentFX

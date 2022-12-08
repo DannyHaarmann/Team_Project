@@ -7,8 +7,10 @@ public class InteractScript : MonoBehaviour
 
     public static bool ChestIsOpen = false;
     private bool isChest;
+    private bool onSword;
     public GameObject ChestUI;
     public GameObject HealthUI;
+    public GameObject interactionColl;
 
 
 
@@ -34,6 +36,14 @@ public class InteractScript : MonoBehaviour
                         Pause();
                     }
                 }
+                
+            }
+            else if(onSword)
+            {
+                if(Input.GetKeyDown("e"))
+                {
+                    //Destroy();
+                }
             }
     }
 
@@ -43,6 +53,12 @@ public class InteractScript : MonoBehaviour
         {
             isChest = true;
         }
+        else if(coll.tag == "Sword")
+        {
+            onSword = true;
+            interactionColl = coll.GetComponent<GameObject>();
+            Debug.Log(interactionColl);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D coll)
@@ -50,6 +66,11 @@ public class InteractScript : MonoBehaviour
         if (coll.tag == "Chest")
         {
             isChest = false;
+        }
+        else if(coll.tag == "Sword")
+        {
+            onSword = false;
+            interactionColl = null;
         }
     }
 
