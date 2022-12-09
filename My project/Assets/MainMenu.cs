@@ -26,4 +26,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
+
+    public void BackFromDeath()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void LoadSave()
+    {
+        //load save
+    }
 }

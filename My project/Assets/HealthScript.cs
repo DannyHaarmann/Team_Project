@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class HealthScript : MonoBehaviour
         if(health <= 0)
         {
             Destroy(Player);
+            SceneManager.LoadScene("DeathScreen");
         }
     }
 }
