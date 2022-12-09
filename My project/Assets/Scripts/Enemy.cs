@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Animator animator;
-    public void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-    public int Health
+   public int Health
     {
         set
         {
@@ -34,7 +29,6 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
         print("Killed");
-        animator.SetTrigger("Defeated");
     }
     
 }
