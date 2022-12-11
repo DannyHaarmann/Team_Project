@@ -6,7 +6,7 @@ namespace SaveLoadSystem
 
     public static class SaveGameManager
     {
-        public staticSaveData CurrentSaveData = new SaveData();
+        public static SaveData CurrentSaveData = new SaveData();
         public const string SaveDirectory = "/SaveData/";
         public const string FileName = "Savegame.sav";
 

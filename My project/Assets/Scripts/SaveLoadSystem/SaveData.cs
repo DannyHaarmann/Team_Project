@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SaveLoadSystem {
+namespace SaveLoadSystem
+{ 
     public class SaveData : MonoBehaviour
     {
-        public SaveData() {
+        
+        public SaveData() 
+        {
 
-            public string greeting = "hello";
+            string greetings = "hello";
+
+
         }
     }
 }
+

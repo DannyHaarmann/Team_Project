@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SaveLoadSystem{
+namespace SaveLoadSystem
+{
     public class MainMenu : MonoBehaviour
     {
         public void StartGame()
@@ -23,42 +24,39 @@ namespace SaveLoadSystem{
 
         }
 
-<<<<<<< Updated upstream
-    public void BackFromCredits()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
-=======
+
         public void BackFromCredits()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
         }
+
 
         public void BackFromDeath()
         {
             SceneManager.LoadScene("Menu");
         }
 
-        public void SaveGame() {
+        public void SaveGame()
+        {
             SaveGameManager.CurrentSaveData = new SaveData();
             SaveGameManager.SaveGame();
             Debug.Log("Game Saved");
         }
 
-        public void LoadGame() {
+        public void LoadGame()
+        {
             SaveGameManager.LoadGame();
             Debug.Log("Game Loaded");
         }
 
->>>>>>> Stashed changes
-    }
 
-    public void BackFromDeath()
-    {
-        SceneManager.LoadScene("Menu");
-    }
 
-    public void LoadSave()
-    {
-        //load save
+
+
+
+        public void LoadSave()
+        {
+            //load save
+        }
     }
 }
