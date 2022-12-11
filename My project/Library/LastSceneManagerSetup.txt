@@ -1,5 +1,13 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Credits.unity
+=======
+<<<<<<< Updated upstream
+- path: Assets/Scenes/Menu.unity
+=======
+- path: Assets/Scenes/SampleScene.unity
+>>>>>>> Stashed changes
+>>>>>>> Aidan
   isLoaded: 1
   isActive: 1
   isSubScene: 0
