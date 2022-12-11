@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
 
     public bool canMove = true;
-    public int health = 50;
+    public int health = 10;
 
 
     
@@ -135,6 +135,16 @@ public class PlayerController : MonoBehaviour
     public int getHealth()
     {
         return health;
+    }
+
+    public void addHealth(int value)
+    {
+        health = health + value ;
+    }
+
+    public void setSpeed(float value)
+    {
+        MoveSpeed = value;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

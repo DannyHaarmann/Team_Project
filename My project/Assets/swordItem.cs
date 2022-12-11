@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swordItem : MonoBehaviour
+public class swordItem : MonoBehaviour   
 {
-    // Start is called before the first frame update
+    public GameObject Interaction;
+    public GameObject Sword;
+    private bool onSword;
+    private int damage;
+
     void Start()
     {
         
@@ -13,6 +17,16 @@ public class swordItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        onSword = Interaction.GetComponent<InteractScript>().checkSword();
+        
+        if(onSword == true)
+        {
+            if(Input.GetKeyDown("e"))
+            {
+                Destroy(this.gameObject);
+                Sword.GetComponent<SwordAttack>().setDamage(10);
+            }
+        } 
         
     }
 }

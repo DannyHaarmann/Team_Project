@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class InteractScript : MonoBehaviour
 {
-
+    Vector3 pos;
     public static bool ChestIsOpen = false;
     private bool isChest;
     private bool onSword;
+    private bool onPotion;
+    private bool onSpeedPot;
     public GameObject ChestUI;
     public GameObject HealthUI;
-    public GameObject interactionColl;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-            if(isChest)
+        transform.localPosition = pos;
+            if (isChest)
             {
                 if (Input.GetKeyDown("e"))
                 {
@@ -38,13 +38,6 @@ public class InteractScript : MonoBehaviour
                 }
                 
             }
-            else if(onSword)
-            {
-                if(Input.GetKeyDown("e"))
-                {
-                    //Destroy();
-                }
-            }
     }
 
     public void OnTriggerEnter2D(Collider2D coll)
@@ -55,9 +48,51 @@ public class InteractScript : MonoBehaviour
         }
         else if(coll.tag == "Sword")
         {
-            onSword = true;
-            interactionColl = coll.GetComponent<GameObject>();
-            Debug.Log(interactionColl);
+            onSword = true;  
+        }
+        else if(coll.tag == "Potion")
+        {
+            onPotion = true;
+        }
+        else if (coll.tag == "SpeedPot")
+        {
+            onSpeedPot = true;
+        }
+    }
+
+    public bool checkSword()
+    {
+        if(onSword == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool checkPotion()
+    {
+        if(onPotion == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool checkSpeedPot()
+    {
+        if(onSpeedPot == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -70,7 +105,14 @@ public class InteractScript : MonoBehaviour
         else if(coll.tag == "Sword")
         {
             onSword = false;
-            interactionColl = null;
+        }
+        else if (coll.tag == "Potion")
+        {
+            onPotion = false;
+        }
+        else if(coll.tag == "SpeedPot")
+        {
+            onSpeedPot = false;
         }
     }
 

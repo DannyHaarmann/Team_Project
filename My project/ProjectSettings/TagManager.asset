@@ -8,6 +8,8 @@ TagManager:
   - Chest
   - Interaction
   - Sword
+  - Potion
+  - SpeedPot
   layers:
   - Default
   - TransparentFX

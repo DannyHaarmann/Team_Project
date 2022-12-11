@@ -29,8 +29,6 @@ public class SwordAttack : MonoBehaviour
         print("attack left");
         swordCollider.enabled = true;
         transform.localPosition = new Vector3(RightattackOffset.x * -1, RightattackOffset.y);
-        
-        
 
     }
     public void attackRight()
@@ -43,6 +41,11 @@ public class SwordAttack : MonoBehaviour
     public void stopAttack()
     {
         swordCollider.enabled = false;
+    }
+
+    public void setDamage(int value)
+    {
+        damage = value;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
