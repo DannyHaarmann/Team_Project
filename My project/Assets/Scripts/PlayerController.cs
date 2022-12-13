@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public SaveLoadSystem.SaveData SaveFile = SaveLoadSystem.SaveGameManager.CurrentSaveData;
     Vector2 movementInput;
     Rigidbody2D rb;
     public float MoveSpeed = 1F;
@@ -28,6 +29,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //if loadad:
+            rb.position = SaveFile.getPositionCoords();
+            this.health = SaveFile.getCurrentHealth();
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         
@@ -36,6 +40,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        SaveFile.setPositionCoords(rb.position);
+        SaveFile.setCurrentHealth(this.health);
         if (canMove)
         {
             if (movementInput != Vector2.zero)

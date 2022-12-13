@@ -38,17 +38,28 @@ namespace SaveLoadSystem{
             SceneManager.LoadScene("Menu");
         }
 
+<<<<<<< Updated upstream
         public void SaveGame() {
             SaveGameManager.CurrentSaveData = new SaveData();
+=======
+        public void SaveGame()
+        {
+>>>>>>> Stashed changes
             SaveGameManager.SaveGame();
-            Debug.Log("Game Saved");
         }
 
         public void LoadGame() {
             SaveGameManager.LoadGame();
-            Debug.Log("Game Loaded");
         }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+        public void LoadFromDeath()
+        {
+            this.LoadGame();
+            SceneManager.LoadScene("SampleScene");
+        }
 >>>>>>> Stashed changes
     }
 }
