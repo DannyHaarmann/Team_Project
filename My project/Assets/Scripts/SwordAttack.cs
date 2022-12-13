@@ -10,6 +10,8 @@ public class SwordAttack : MonoBehaviour
     public Collider2D swordCollider;
     int health;
     public int damage = 3;
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,14 +28,14 @@ public class SwordAttack : MonoBehaviour
 
     public void attackLeft()
     {
-        print("attack left");
+        //print("attack left");
         swordCollider.enabled = true;
         transform.localPosition = new Vector3(RightattackOffset.x * -1, RightattackOffset.y);
 
     }
     public void attackRight()
     {
-            print("attack right");
+            //print("attack right");
             swordCollider.enabled = true;
             transform.localPosition = RightattackOffset;
 
@@ -47,6 +49,7 @@ public class SwordAttack : MonoBehaviour
     {
         damage = value;
     }
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Enemy")
@@ -60,5 +63,8 @@ public class SwordAttack : MonoBehaviour
 
         }
     }
+    */
+
+
 
 }

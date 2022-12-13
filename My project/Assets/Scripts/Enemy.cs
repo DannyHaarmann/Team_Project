@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-   public int Health
+    Animator animation;
+    
+
+    public void Start()
+    {
+        animation = GetComponent<Animator>();
+        
+}
+    public int Health
     {
         set
         {
-            
+            if(value < 0)
+            {
+                animation.SetTrigger("Hit");
+            }
             health = value;
             if(health <= 0)
             {
+                animation.SetTrigger("dead");
                 defeated();
             }
         }
@@ -27,8 +39,13 @@ public class Enemy : MonoBehaviour
    
     public void defeated()
     {
-        Destroy(gameObject);
+        animation.SetTrigger("dead");
+        //Destroy(gameObject);
         print("Killed");
+    }
+    void OnHit(float damage)
+    {
+        Debug.Log("Slime hit for " + damage);
     }
     
 }

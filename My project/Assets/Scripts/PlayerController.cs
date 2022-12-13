@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     SpriteRenderer SpriteRenderer;
     public SwordAttack swordAttack;
+    public GameObject SwordSmack;
+    Collider2D swordCollider;
 
 
     public bool canMove = true;
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
+        swordCollider = SwordSmack.GetComponent<Collider2D>();
         
     }
 
