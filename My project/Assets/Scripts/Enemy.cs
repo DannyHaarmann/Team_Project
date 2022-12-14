@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Animator animation;
+    Animator animator;
     
 
     public void Start()
     {
-        animation = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         
 }
     public int Health
@@ -18,12 +18,12 @@ public class Enemy : MonoBehaviour
         {
             if(value < 0)
             {
-                animation.SetTrigger("Hit");
+                
             }
             health = value;
             if(health <= 0)
             {
-                animation.SetTrigger("dead");
+                animator.SetTrigger("dead");
                 defeated();
             }
         }
@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
    
     public void defeated()
     {
-        animation.SetTrigger("dead");
+        animator.SetTrigger("dead");
         //Destroy(gameObject);
         print("Killed");
     }

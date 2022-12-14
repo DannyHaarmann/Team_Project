@@ -49,7 +49,7 @@ public class SwordAttack : MonoBehaviour
     {
         damage = value;
     }
-    /*
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Enemy")
@@ -63,7 +63,7 @@ public class SwordAttack : MonoBehaviour
 
         }
     }
-    */
+    
 
 
 

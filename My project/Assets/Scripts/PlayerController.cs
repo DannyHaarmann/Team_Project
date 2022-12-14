@@ -63,12 +63,12 @@ public class PlayerController : MonoBehaviour
 
                 SpriteRenderer.flipX = true;
 
-
+                gameObject.BroadcastMessage("IsFacingRight", false);
             }
             else if (movementInput.x > 0)
             {
                 SpriteRenderer.flipX = false;
-
+                gameObject.BroadcastMessage("IsFacingRight", true);
             }
         }
             
@@ -149,15 +149,16 @@ public class PlayerController : MonoBehaviour
     {
         MoveSpeed = value;
     }
-
+    
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Enemy")
         {
-            print("Exit collision");
+            //print("Exit collision");
             health = health - 1;
         }
     }
+    
 
     /* public static void addToInventory(Item item)
     {

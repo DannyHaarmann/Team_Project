@@ -124,7 +124,7 @@ Animator:
   m_GameObject: {fileID: 4745984075353888109}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01ced9c33acf5bd47b4649f73bed4863, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   damage: 1
   knockbackForce: 100
   moveSpeed: 4
+  _health: 3
 --- !u!58 &6605110935884686048
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.7
 --- !u!114 &8439464719114143515
 MonoBehaviour:
   m_ObjectHideFlags: 0
