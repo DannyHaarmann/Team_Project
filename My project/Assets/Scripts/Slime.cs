@@ -26,8 +26,6 @@ public class Slime : MonoBehaviour,IDamageable
             Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
             
             animator.SetBool("SlimeIsMoving" , true);
-            
-
             rb.AddForce(direction * moveSpeed * Time.deltaTime);
         }
         else

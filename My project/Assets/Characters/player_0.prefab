@@ -102,7 +102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636793520365018157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1001808757746111138}
@@ -270,6 +270,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 1000
+  playerColl: {fileID: 0}
+  SaveFile:
+    CurrentHealth: 0
+    PositionCoords: {x: 0, y: 0}
+  movementInput: {x: 0, y: 0}
+  rb: {fileID: 0}
   MoveSpeed: 1
   collisionOffset: 0.05
   movementfilter:
@@ -288,8 +294,8 @@ MonoBehaviour:
     maxNormalAngle: 0
   swordAttack: {fileID: 6136523751343653127}
   SwordSmack: {fileID: 1548689190333526120}
-  canMove: 1
   health: 100
+  canMove: 1
 --- !u!50 &828706763903215109
 Rigidbody2D:
   serializedVersion: 4
