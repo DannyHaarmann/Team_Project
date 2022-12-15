@@ -8,6 +8,8 @@ public class swordItem : MonoBehaviour
     public GameObject Sword;
     private bool onSword;
     private int damage;
+    public GameObject swordInventoryImage;
+    public GameObject itself;
 
     void Start()
     {
@@ -25,6 +27,8 @@ public class swordItem : MonoBehaviour
             {
                 Destroy(this.gameObject);
                 Sword.GetComponent<SwordAttack>().setDamage(10);
+                swordInventoryImage.SetActive(true);
+                itself.SetActive(false);
             }
         } 
         

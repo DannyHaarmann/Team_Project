@@ -26,7 +26,7 @@ public class SpeedScript : MonoBehaviour
             if (Input.GetKeyDown("e"))
             {
                 Destroy(this.gameObject);
-                Player.GetComponent<PlayerController>().setSpeed(20f);
+                Player.GetComponent<PlayerController>().setSpeed(10f);
             }
         }
 

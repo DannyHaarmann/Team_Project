@@ -7,6 +7,8 @@ public class ChestScript : MonoBehaviour
 
     public static bool ChestIsOpen = false;
     public GameObject ChestUI;
+    public GameObject Player;
+    public GameObject item;
     
 
     // Update is called once per frame
@@ -29,5 +31,11 @@ public class ChestScript : MonoBehaviour
         
         Time.timeScale = 0f;
         ChestIsOpen = true;
+    }
+
+    public void addHealth()
+    {
+        Player.GetComponent<PlayerController>().addHealth(10);
+        item.SetActive(false);
     }
 }
