@@ -23,6 +23,7 @@ namespace SaveLoadSystem
             File.WriteAllText(dir + FileName, json);
 
             GUIUtility.systemCopyBuffer = dir + FileName;
+            Debug.Log(CurrentSaveData.getCurrentHealth());
 
             return true;
         }

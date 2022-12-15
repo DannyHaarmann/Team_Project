@@ -9,9 +9,6 @@ public class PlayerController : MonoBehaviour
 {
     public float knockbackForce = 1000f;
     public Collider2D playerColl;
-    Vector2 movementInput;
-    Rigidbody2D rb;
-    public float MoveSpeed = 1F;
     public SaveLoadSystem.SaveData SaveFile;
     public Vector2 movementInput;
     public Rigidbody2D rb;
@@ -27,10 +24,7 @@ public class PlayerController : MonoBehaviour
     public GameObject SwordSmack;
     Collider2D swordCollider;
 
-
-    public bool canMove = true;
-    public int health = 10;
-    public int health = 10;
+    public int health;
     public bool canMove = true;
 
 
@@ -42,13 +36,14 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         swordCollider = SwordSmack.GetComponent<Collider2D>();
+        health = 10;
         if(SaveLoadSystem.SaveGameManager.loaded) {
             Debug.Log("Load Detected");
             SaveLoadSystem.SaveGameManager.LoadGame();
             this.SaveFile = SaveLoadSystem.SaveGameManager.CurrentSaveData;
 
             this.rb.position = SaveFile.getPositionCoords();
-            this.health = SaveFile.getCurrentHealth();
+            health = SaveFile.getCurrentHealth();
             
             SaveLoadSystem.SaveGameManager.loaded = false;
         }
