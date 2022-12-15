@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     Vector2 movementInput;
     Rigidbody2D rb;
     public float MoveSpeed = 1F;
+    public SaveLoadSystem.SaveData SaveFile;
+    public Vector2 movementInput;
+    public Rigidbody2D rb;
+    public float MoveSpeed = 4F;
     public float collisionOffset = 0.05F;
     public ContactFilter2D movementfilter;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
@@ -26,21 +30,38 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
     public int health = 10;
+    public int health = 10;
+    public bool canMove = true;
 
 
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        this.SaveFile = SaveLoadSystem.SaveGameManager.CurrentSaveData;
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         swordCollider = SwordSmack.GetComponent<Collider2D>();
+        if(SaveLoadSystem.SaveGameManager.loaded) {
+            Debug.Log("Load Detected");
+            SaveLoadSystem.SaveGameManager.LoadGame();
+            this.SaveFile = SaveLoadSystem.SaveGameManager.CurrentSaveData;
+
+            this.rb.position = SaveFile.getPositionCoords();
+            this.health = SaveFile.getCurrentHealth();
+            
+            SaveLoadSystem.SaveGameManager.loaded = false;
+        }
         
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        
+
+        SaveFile.setPositionCoords(this.rb.position);
+        SaveFile.setCurrentHealth(this.health);
         if (canMove)
         {
             if (movementInput != Vector2.zero)

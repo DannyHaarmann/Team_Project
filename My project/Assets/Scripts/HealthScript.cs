@@ -7,16 +7,15 @@ using UnityEngine.SceneManagement;
 public class HealthScript : MonoBehaviour
 {
     public GameObject Player;
+    public SaveLoadSystem.SaveData SaveFile = SaveLoadSystem.SaveGameManager.CurrentSaveData;
     public Text healthText;
     int health;
-
 
     // Start is called before the first frame update
     void Start()
     {
         health = Player.GetComponent<PlayerController>().getHealth();
         Text text = GetComponent<Text>();
-
 
     }
 
