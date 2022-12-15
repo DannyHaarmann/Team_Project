@@ -947,6 +947,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2618934357131098337, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.11623102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618934357131098337, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.20242643
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618934357131098337, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618934357131098337, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.005643678
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618934357131098337, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0019131184
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618934357131098337, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618934357131098337, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5072180505728733575, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -961,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5096925131911504324, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5096925131911504324, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
       propertyPath: m_Offset.x
@@ -987,6 +1015,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5490206706003670753, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
+      propertyPath: playerColl
+      value: 
+      objectReference: {fileID: 798167142}
     - target: {fileID: 5490206706003670753, guid: d096e616cf9d8414e81981dff0c436aa, type: 3}
       propertyPath: chestScript
       value: 
@@ -1223,10 +1255,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0053898674, y: -0.07545818}
+  m_Offset: {x: -0.0024797786, y: 0.0069943443}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1237,7 +1269,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08747749, y: 0.015964702}
+  m_Size: {x: 0.11657837, y: 0.18086974}
   m_EdgeRadius: 0
 --- !u!114 &798167143
 MonoBehaviour:

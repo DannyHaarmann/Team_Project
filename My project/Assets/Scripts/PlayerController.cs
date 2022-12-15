@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public float knockbackForce = 1000f;
+    public Collider2D playerColl;
     Vector2 movementInput;
     Rigidbody2D rb;
     public float MoveSpeed = 1F;
@@ -152,14 +154,21 @@ public class PlayerController : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
+
         if(collision.tag == "Enemy")
         {
+
             //print("Exit collision");
             health = health - 1;
+            playerColl.enabled = false;
+            Invoke("notimmune",.5f);
         }
     }
     
-
+    void notimmune()
+    {
+        playerColl.enabled = true;
+    }
     /* public static void addToInventory(Item item)
     {
         Inventory.Add(item);
