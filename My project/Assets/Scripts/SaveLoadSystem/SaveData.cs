@@ -1,25 +1,15 @@
 using System;
 using UnityEngine;
 
-<<<<<<< Updated upstream
-namespace SaveLoadSystem {
-    public class SaveData : MonoBehaviour
-    {
-        public SaveData() {
-
-            public string greeting = "hello";
-        }
-=======
 namespace SaveLoadSystem
 {
     [System.Serializable]
     public class SaveData
     {
-        [SerializeField] private int MaxHealth = 10;
-        [SerializeField] private int CurrentHealth = 10;
-        [SerializeField] private Vector2 PositionCoords = new Vector2(0,0);
-
-
+        [SerializeField] private int MaxHealth;
+        [SerializeField] private int CurrentHealth;
+        [SerializeField] private Vector2 PositionCoords;
+        //public bool LoadedFromSave = false;
 
         public int getCurrentHealth() {
             return this.CurrentHealth;
@@ -47,6 +37,5 @@ namespace SaveLoadSystem
         public void setPositionCoords(Vector2 coords) {
             this.PositionCoords = coords;
         }
->>>>>>> Stashed changes
     }
 }

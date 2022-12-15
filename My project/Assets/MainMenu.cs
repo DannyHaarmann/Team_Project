@@ -22,12 +22,7 @@ namespace SaveLoadSystem{
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
 
         }
-
-<<<<<<< Updated upstream
-    public void BackFromCredits()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
-=======
+        
         public void BackFromCredits()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
@@ -38,28 +33,14 @@ namespace SaveLoadSystem{
             SceneManager.LoadScene("Menu");
         }
 
-<<<<<<< Updated upstream
-        public void SaveGame() {
-            SaveGameManager.CurrentSaveData = new SaveData();
-=======
         public void SaveGame()
         {
->>>>>>> Stashed changes
             SaveGameManager.SaveGame();
         }
 
         public void LoadGame() {
+            SceneManager.LoadScene("SampleScene");
             SaveGameManager.LoadGame();
         }
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-        public void LoadFromDeath()
-        {
-            this.LoadGame();
-            SceneManager.LoadScene("SampleScene");
-        }
->>>>>>> Stashed changes
     }
 }
